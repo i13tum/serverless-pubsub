@@ -9,4 +9,6 @@ Deployment:
 2. Install Azure Functions Core tools (npm install -g azure-functions-core-tools@core)
 3. Install Azure Functions extension (https://marketplace.visualstudio.com/items?itemName=ms-azuretools.vscode-azurefunctions)
 4. Login to Azure in Vscode
-5. Upload functions to Azure (https://code.visualstudio.com/tutorials/functions-extension/deploy-app)
+5. Update StorageConnectionString and ServiceBusConnectionString in Common.cs
+6. Compile functions and run it locally (https://code.visualstudio.com/tutorials/functions-extension/run-app)
+7. Upload functions to Azure (https://code.visualstudio.com/tutorials/functions-extension/deploy-app)

@@ -15,13 +15,13 @@ namespace PubSubClientCore
 
         static void Main(string[] args)
         {
-            // if (args.Length == 0)
-            // {
-            //     Console.WriteLine("Please provide configuration file in command line arguments,");
-            //     return;
-            // }
-            // var fileName = args[0];
-            var fileName = "CreateSubscribers.json";
+            if (args.Length == 0)
+            {
+                 Console.WriteLine("Please provide configuration file in command line arguments,");
+                 return;
+            }
+            var fileName = args[0];
+            //var fileName = "CreateSubscribers.json";
             var fileText = File.ReadAllText(fileName);
             var configurationFile = JsonConvert.DeserializeObject<ConfigurationFile>(fileText);
             Console.WriteLine($"Provider: {configurationFile.ProviderType}");

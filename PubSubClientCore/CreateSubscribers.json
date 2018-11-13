@@ -2,9 +2,9 @@
     "baseUrl": "https://0achmjvzf2.execute-api.eu-central-1.amazonaws.com/pubsub/csharp",
     "providerType": "Aws",
     "applicationMode": "Subscriber",
-    "nodesCount": 10,
+    "nodesCount": 100,
     "topicsMetadata": {
-        "nodesCount": 10,
+        "nodesCount": 100,
         "topics": [
             "computer"
         ]

@@ -16,7 +16,15 @@ namespace PubSubClientCore.Model
         public void Setup()
         {
             for (var i = 0; i < ConfigurationFile.NodesCount; i++)
-                SetupNode(i);
+                try
+                {
+                    SetupNode(i);
+                }
+                catch (System.Exception exception)
+                {
+                    Console.WriteLine(exception.Message);
+                }
+
         }
 
         public abstract void SetupNode(int nodeNumber);

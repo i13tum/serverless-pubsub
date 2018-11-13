@@ -1,24 +1,12 @@
 {
-    "baseUrl": "http://localhost:7071/api",
-    "providerType": "Azure",
+    "baseUrl": "https://0achmjvzf2.execute-api.eu-central-1.amazonaws.com/pubsub/csharp",
+    "providerType": "Aws",
     "applicationMode": "Subscriber",
     "nodesCount": 10,
     "topicsMetadata": {
-        "nodesCount": 5,
+        "nodesCount": 10,
         "topics": [
-            "topic1",
-            "topic2"
-        ]
-    },
-    "functionsMetadata": {
-        "nodesCount": 2,
-        "functions": [
-            {
-                "functionType": "url",
-                "subscriptionTopic": "function1",
-                "matchingFunction": "http://localhost:7071/api/DetectFaces",
-                "matchingInputs": "index"
-            }
+            "computer"
         ]
     }
 }

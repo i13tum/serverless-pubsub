@@ -20,6 +20,7 @@ namespace PubSubClientCore.Model
             // TODO: Insert AWS keys here,
             var credentials = new BasicAWSCredentials("", "");
             _amazonClient = new AmazonSQSClient(credentials, RegionEndpoint.EUCentral1);
+            FetchMessages();
         }
 
         private async void FetchMessages()

@@ -20,7 +20,7 @@ namespace PubSubClientCore.Model
         {
             var response = await HttpRestClient.Get(Helpers.RegisterSubscriberUrl(ConfigurationFile.BaseUrl));
             Nodes[nodeNumber] = JsonConvert.DeserializeObject<SubscriberMetadata>(response);
-            Console.WriteLine($"Subscriber {nodeNumber} created. Queue Name: {Nodes[nodeNumber].QueueName}");
+            Console.WriteLine($"Subscriber {nodeNumber} created. Queue Name: {Nodes[nodeNumber].QueueUrl}");
             if (ConfigurationFile.ProviderType == ProviderType.Azure)
                 Subscribers[nodeNumber] = new AzureSubscriber(Nodes[nodeNumber]);
             else
@@ -31,11 +31,11 @@ namespace PubSubClientCore.Model
 
         public void CallFunctions(int nodeNumber)
         {
-            if (nodeNumber < ConfigurationFile.TopicsMetadata.NodesCount)
+            if (nodeNumber < ConfigurationFile.TopicsMetadata?.NodesCount)
                 Subscribers[nodeNumber].SubscribeTopics(ConfigurationFile);
-            if (nodeNumber < ConfigurationFile.ContentMetadata.NodesCount)
+            if (nodeNumber < ConfigurationFile.ContentMetadata?.NodesCount)
                 Subscribers[nodeNumber].SubscribeContent(ConfigurationFile);
-            if (nodeNumber < ConfigurationFile.FunctionsMetadata.NodesCount)
+            if (nodeNumber < ConfigurationFile.FunctionsMetadata?.NodesCount)
                 Subscribers[nodeNumber].SubscribeFunction(ConfigurationFile);
         }
     }
